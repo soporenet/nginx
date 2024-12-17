@@ -1,0 +1,88 @@
+/* General body and layout settings */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #d3d3d3; /* Light grey solid background */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: white;
+}
+
+/* Main container for the content */
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 40px;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* Heading style */
+h1 {
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Icons container, horizontally centered */
+.icons {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+/* Individual icon card style */
+.icon-card {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    flex-direction: column; /* Arrange icon and text vertically */
+}
+
+/* Hover effect for 3D look */
+.icon-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Icon size and color */
+.icon-card i {
+    font-size: 2rem;
+    color: #007bff;
+}
+
+/* Name label styling */
+.icon-name {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Logout link style */
+.logout-link {
+    margin-top: 40px;
+    font-size: 1.2rem;
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+/* Hover effect for logout link */
+.logout-link:hover {
+    text-decoration: underline;
+}
+

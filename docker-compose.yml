@@ -2,13 +2,24 @@ version: '3.7'
 
 services:
   nginx:
-    image: nginx:latest
+    image: soporenet-nginx:latest-amd64
     container_name: nginx
-    ports:
-      - "6080:80"  # Exposes port 80 for HTTP traffic
-      - "6443:443"  # Exposes port 443 for HTTPS traffic
     volumes:
-      - /u01/mydev/containers-fs-layout/nginx/etc/nginx.conf:/etc/nginx/nginx.conf  # Mount custom NGINX config
-      - /u01/mydev/containers-fs-layout/nginx/data/html:/usr/share/nginx/html  # Mount directory for serving static content
-      - /u01/mydev/containers-fs-layout/nginx/data:/data
+      - "./etc/nginx/includes/signin.sandbox.sopore.net.conf:/etc/nginx/includes/signin.sandbox.sopore.net.conf"
+      - "./etc/nginx/conf.d/http.conf:/etc/nginx/conf.d/http.conf"
+      - "./etc/nginx/nginx.conf:/etc/nginx/nginx.conf"
+      - "./html:/usr/share/nginx/html"
+      - "/u01/mydev/containers-fs-layout/nginx/data/logs:/var/log/nginx"
+    ports:
+      - "8080:80"
+    expose:
+      - 80
     restart: always
+    networks:
+      - web-net
+
+networks:
+  web-net:
+    external:
+      name: mgmt-net
+
