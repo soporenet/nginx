@@ -2,16 +2,16 @@ version: '3.7'
 
 services:
   nginx:
-    image: nginx:1.0-amd64
+    image: docker.io/soporenet/nginx:1.0
     container_name: nginx
     volumes:
       - "./etc/nginx/conf.d:/etc/nginx/conf.d"
       - "./usr/share/nginx/html/infra:/usr/share/nginx/html/infra"
       - "/u01/mydev/containers-fs-layout/nginx/data/logs:/var/log/nginx"
     ports:
-      - "18080:18080"
+      - "8080:80"
     expose:
-      - 18080
+      - 8080
     restart: always
     networks:
       - web-net

@@ -7,5 +7,5 @@ RUN rm /etc/nginx/conf.d/default.conf
 RUN rm /docker-entrypoint.d/10-listen-on-ipv6-by-default.sh
 
 # Expose the required port (e.g., 80 for HTTP or 443 for HTTPS)
-EXPOSE 18080
+EXPOSE 80
 
